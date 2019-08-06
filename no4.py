@@ -2,6 +2,7 @@
     4th problem of the Project Euler
 """
     #Largest palindome made from the product of 3-digit numbers.
+import time
 
 def isPalindome(number):
     temp = number
@@ -21,5 +22,8 @@ def findingProducts():
             if isPalindome(i*j):
                 allPalindomes.append(i*j)
     return allPalindomes
-    
-print(max(findingProducts()))
+
+start_time = time.time() * 1000
+result = max(findingProducts())  
+print("Time it takes = ", (time.time() * 1000) - start_time)
+print(result)
